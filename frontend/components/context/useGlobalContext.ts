@@ -10,6 +10,9 @@ export const useGlobalContext =  () =>{
         async (value:number) =>{
             dispatch({type:"SET_RESULT", payload:{loading:true,  isMounted:true ,result:"", errorMSG:""}})
             try{
+                /* Put Production URL Here rather than just hardcode url can use 
+                .env for production and dev urls 
+                */
                 const resp = await fetch(`http://localhost:8080?v=${value}`)
                 const body = await resp.json()
                 const { result , errorMSG } = body;

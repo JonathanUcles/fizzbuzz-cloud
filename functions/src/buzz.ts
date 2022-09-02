@@ -1,5 +1,5 @@
 import type {HttpFunction} from '@google-cloud/functions-framework'
-export const fizzbuzz:HttpFunction = (req, res) =>{ 
+export const buzz:HttpFunction = (req, res) =>{ 
     res.set('Access-Control-Allow-Origin', "*")
     res.set('Access-Control-Allow-Methods', 'GET, POST');
     let getResult = req.body.result || '';
