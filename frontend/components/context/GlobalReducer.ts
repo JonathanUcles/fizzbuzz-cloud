@@ -5,6 +5,7 @@ export const GlobalReducer = (state:State, action:Actions) =>{
             return {
                 ...state,
                 fizzbuzz: {
+                    isMounted: action.payload.isMounted,
                     loading:action.payload.loading,
                     result:action.payload.result,
                     errorMSG:action.payload.errorMSG

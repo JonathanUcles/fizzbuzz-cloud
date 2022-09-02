@@ -6,7 +6,7 @@ export const fizzbuzz:HttpFunction = (req, res) =>{
     let results = ['FizzBuzz','Fizz','Buzz']
     let value:number = parseInt(v as string)
 
-    if(value == undefined || value < 0 || isNaN(value)){
+    if(value == undefined || value < 0 || isNaN(value) || value > 10000){
         res.status(400).json({result:'',errorMSG:`Please enter a valid number you input was ${v}`})
     }
     

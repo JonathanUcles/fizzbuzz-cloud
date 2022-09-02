@@ -1,8 +1,9 @@
-import { createContext , useReducer, ReactNode, Dispatch} from 'react'
+import React,{ createContext , useReducer, ReactNode, Dispatch} from 'react'
 import { GlobalReducer } from './GlobalReducer'
 import {State, Actions} from './types'
 const defaultState = {
-    fizzbuzz:{
+    fizzbuzz:{    
+        isMounted:false,
         loading:false,
         result:"",
         errorMSG:""

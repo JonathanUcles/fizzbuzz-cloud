@@ -1,0 +1,16 @@
+- fizz:
+    call: http.post
+    args:
+        url: https://REGION-PROJECT_ID.cloudfunctions.net/fizz
+        body: 
+            num: ${body.num}
+    result: fizz
+- buzz:
+    call: http.post
+    args:
+        url: https://REGION-PROJECT_ID.cloudfunctions.net/buzz
+        body:
+            result: ${fizz.body.result}
+    result: buzz_result
+- return_result:
+    return: ${buzz_result}

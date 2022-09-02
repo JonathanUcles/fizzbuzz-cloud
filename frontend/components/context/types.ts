@@ -1,6 +1,8 @@
 export type State = {
     fizzbuzz:{
-        loading:boolean,
+       
+        isMounted:boolean;
+        loading:boolean;
         result:string;
         errorMSG:string;
 
@@ -10,6 +12,8 @@ export type State = {
 export type Actions = {
     type:"SET_RESULT";
     payload:{
+      
+        isMounted:boolean,
         loading:boolean;
         result:string;
         errorMSG:string;

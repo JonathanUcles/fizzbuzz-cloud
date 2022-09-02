@@ -1,5 +1,5 @@
 .root{
-    @apply content-center
+    @apply flex items-center justify-center py-16
 }
 .root input{
     @apply border p-2

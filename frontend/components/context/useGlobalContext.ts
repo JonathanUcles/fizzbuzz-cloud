@@ -8,16 +8,16 @@ export const useGlobalContext =  () =>{
     
     const handleResultChange = useCallback(
         async (value:number) =>{
-            dispatch({type:"SET_RESULT", payload:{loading:true ,result:"", errorMSG:""}})
+            dispatch({type:"SET_RESULT", payload:{loading:true,  isMounted:true ,result:"", errorMSG:""}})
             try{
                 const resp = await fetch(`http://localhost:8080?v=${value}`)
                 const body = await resp.json()
                 const { result , errorMSG } = body;
-                console.log(body)
-                dispatch({type:"SET_RESULT", payload:{loading:false ,result:result, errorMSG:errorMSG}})
+                //console.log(body)
+                dispatch({type:"SET_RESULT", payload:{loading:false,  isMounted:true ,result:result, errorMSG:errorMSG}})
 
             }catch(error){
-                dispatch({type:"SET_RESULT", payload:{loading:false ,result:"", errorMSG:"Request Failed"}})
+                dispatch({type:"SET_RESULT", payload:{loading:false, isMounted:true ,result:"", errorMSG:"Request Failed"}})
 
 
             }
