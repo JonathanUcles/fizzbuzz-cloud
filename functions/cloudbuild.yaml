@@ -1,0 +1,24 @@
+steps:
+  - name: node
+    entrypoint: cd
+    args: ['functions']
+
+  - name: node
+    entrypoint: yarn
+    args: ['install']
+
+  - name: node
+    entrypoint: yarn
+    args: ['run', 'build']
+
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    args:
+    - gcloud
+    - functions
+    - deploy
+    - fizzbuz
+    - --region=us-west1
+    - --source=build/src
+    - --trigger-http
+    - --runtime=nodejs16
+    - --allow-unauthenticated

@@ -1,0 +1,9 @@
+.root{
+    @apply content-center
+}
+.root input{
+    @apply border p-2
+}
+.root button{
+    @apply border p-2 bg-green-600 text-white font-bold
+}

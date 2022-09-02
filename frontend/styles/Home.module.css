@@ -1,0 +1,5 @@
+.root {
+}
+.root h1{ 
+    @apply text-center font-extrabold text-2xl mt-8
+}  
